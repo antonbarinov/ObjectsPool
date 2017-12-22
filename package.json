@@ -1,0 +1,24 @@
+{
+  "name": "objects-pool",
+  "version": "1.0.0",
+  "description": "Pool for any objects. Prefer use this for connection pools (MySQL, PostresSQL, etc.)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {},
+  "author": {
+    "name": "Barinov Anton"
+  },
+  "keywords": [
+    "pool"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonbarinov/ObjectsPool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/antonbarinov/ObjectsPool/issues"
+  },
+  "homepage": "https://github.com/antonbarinov/ObjectsPool"
+}
