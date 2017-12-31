@@ -5,11 +5,17 @@ class ObjectsPool {
     }
 
     put(object = {}) {
+        const that = this;
+        object.release = function () {
+            that.__pool.push(this);
+            if (that.__queue.length) {
+                const obj = that.__pool.shift();
+                that.__queue.shift()(obj);
+            }
+        };
+
+
         this.__pool.push(object);
-        if (this.__queue.length) {
-            const obj = this.__pool.shift();
-            this.__queue.shift()(obj);
-        }
     }
 
     async get() {

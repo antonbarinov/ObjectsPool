@@ -27,7 +27,7 @@ async function work(time) {
     const obj = await pool.get(); // get from pool
     await sleep(time);
     console.log(obj);
-    pool.put(obj); // put it back to our pool
+    obj.release(); // put it back to our pool
 }
 
 for (let i = 1; i <= 10; i++) {
@@ -41,16 +41,16 @@ for (let i = 1; i <= 10; i++) {
 
 Output:
 ```
-{ a: 3 }
-{ a: 3 }
-{ a: 3 }
-{ a: 3 }
-{ a: 3 }
-{ a: 3 }
-{ a: 3 }
-{ a: 3 }
-{ a: 1 }
-{ a: 2 }
+{ a: 3, release: [Function] }
+{ a: 3, release: [Function] }
+{ a: 3, release: [Function] }
+{ a: 3, release: [Function] }
+{ a: 3, release: [Function] }
+{ a: 3, release: [Function] }
+{ a: 3, release: [Function] }
+{ a: 3, release: [Function] }
+{ a: 1, release: [Function] }
+{ a: 2, release: [Function] }
 ```
 
 ## API
